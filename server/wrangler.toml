@@ -1,0 +1,33 @@
+# Actora API — Cloudflare Worker
+#
+# 1. npm install -g wrangler   (or use npx)
+# 2. npx wrangler kv namespace create ACTORA_RATE_LIMIT
+# 3. npx wrangler kv namespace create ACTORA_CONTRACTS
+# 4. Paste the returned ids below, then deploy:
+#      npx wrangler deploy --config server/wrangler.toml
+# 5. Set secrets (never in this file):
+#      npx wrangler secret put RESEND_API_KEY --config server/wrangler.toml
+#      npx wrangler secret put FROM_EMAIL --config server/wrangler.toml
+#      npx wrangler secret put INQUIRY_TO_EMAIL --config server/wrangler.toml
+#      npx wrangler secret put ALLOWED_ORIGINS --config server/wrangler.toml
+#      npx wrangler secret put AUTO_REPLY --config server/wrangler.toml
+#      npx wrangler secret put ADMIN_TOKEN --config server/wrangler.toml
+#      npx wrangler secret put DROPBOX_SIGN_API_KEY --config server/wrangler.toml
+
+name = "actora-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "REPLACE_WITH_RATE_LIMIT_KV_ID"
+
+[[kv_namespaces]]
+binding = "CONTRACTS"
+id = "REPLACE_WITH_CONTRACTS_KV_ID"
+
+[vars]
+# Non-secret defaults. Override ALLOWED_ORIGINS with a secret in production.
+AUTO_REPLY = "false"

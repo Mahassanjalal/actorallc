@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07070a" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Reveal-ready is applied before paint so scroll reveals never flash.
+      // The failsafe keeps content readable if the JS bundle fails to load.
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js");
+        try {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            root.classList.add("reduced-motion");
+          }
+        } catch (error) {
+          /* no-op */
+        }
+        window.setTimeout(function () {
+          root.classList.add("reveal-failsafe");
+        }, 4000);
+      })();
+    </script>
+    <!--app-head-->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
