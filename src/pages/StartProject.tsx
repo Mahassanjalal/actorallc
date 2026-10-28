@@ -95,7 +95,7 @@ export function StartProject() {
                     >
                       {site.email.projects}
                     </a>
-                    . We never share briefs outside the studio.
+                    . We never share briefs outside the company.
                   </p>
                   <p className="mt-4 text-[11px] leading-relaxed text-faint">
                     By submitting a brief you agree to our{" "}

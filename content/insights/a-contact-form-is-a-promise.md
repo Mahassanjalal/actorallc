@@ -1,7 +1,7 @@
 ---
 title: "A contact form is a promise"
 slug: "a-contact-form-is-a-promise"
-description: "The least glamorous page on a studio site is where trust is won or lost. A short field guide to honest forms."
+description: "The least glamorous page on a company site is where trust is won or lost. A short field guide to honest forms."
 author: "Actora Studio"
 date: "2026-06-12"
 category: "Operations"
@@ -42,7 +42,7 @@ Error messages are part of the brand. A sarcastic error or a bare "Invalid input
 
 ## Spam protection without a maze
 
-CAPTCHAs shift the cost of abuse onto every legitimate visitor, including people using screen readers or older devices. For a studio site, a layered, quieter approach usually works:
+CAPTCHAs shift the cost of abuse onto every legitimate visitor, including people using screen readers or older devices. For a company site, a layered, quieter approach usually works:
 
 1. A honeypot field that is hidden from people and irresistible to naive bots.
 2. A submit-timing check that rejects instant posts.
@@ -64,4 +64,4 @@ Ask only for what the reply requires. Explain retention in the policy and link i
 
 Contracts, signatures and identity documents belong in a dedicated, provider-hosted workflow with expiring links and an audit trail — not in an inbox.
 
-A form that keeps its promise is not a design flourish. It is the minimum. But it is also one of the few places where a studio can demonstrate, in public, how it treats people.
+A form that keeps its promise is not a design flourish. It is the minimum. But it is also one of the few places where a company can demonstrate, in public, how it treats people.

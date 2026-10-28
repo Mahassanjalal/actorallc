@@ -101,13 +101,13 @@ Nothing else needs updating after publishing. The build automatically:
 ## Review and publication
 
 1. Open a pull request. CI runs lint, typecheck, tests and a production build.
-2. Ask for a review from the studio.
+2. Ask for a review from the company.
 3. Once approved and merged to `main`, the deploy workflow publishes the site.
 
 To unpublish an article without deleting the writing, set `draft: true`. To
 remove it entirely, delete the file and open a pull request.
 
-## Editing the studio pages
+## Editing the company pages
 
 Homepage, About, Services, Work, Contact and legal copy live in
 `src/config/site.ts` and the page files. For routine updates:

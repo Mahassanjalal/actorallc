@@ -13,12 +13,12 @@ export function Services() {
         eyebrow="Services"
         title={
           <>
-            Strategy you can see.
+            Software that solves
             <br />
-            Work that <span className="serif-accent">holds</span>.
+            <span className="serif-accent">real problems</span>.
           </>
         }
-        intro="Four disciplines, delivered as one engagement. We scope around the decision that needs to be made, not a menu of deliverables."
+        intro="Four disciplines, delivered as one engagement. We scope around your business needs, not a menu of technical deliverables."
         meta={
           <ul className="flex flex-wrap gap-2">
             {services.map((service) => (

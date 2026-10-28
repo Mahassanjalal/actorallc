@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Actora LLC — cinematic studio website. React, TypeScript, Vite, statically prerendered.",
+  "description": "Actora LLC — software company website. React, TypeScript, Vite, statically prerendered.",
   "engines": {
     "node": ">=22"
   },

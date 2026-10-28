@@ -14,10 +14,10 @@ export function Work() {
         eyebrow="Selected work"
         title={
           <>
-            Built to be <span className="serif-accent">remembered</span>.
+            Software that delivers <span className="serif-accent">results</span>.
           </>
         }
-        intro="A deliberately small selection of brand, product and platform work. Each case study focuses on the decisions, not just the outcome."
+        intro="A deliberately small selection of custom software, web applications and enterprise solutions. Each case study focuses on the technical approach and business impact, not just the final product."
         meta={
           <p className="label">
             {String(work.length).padStart(2, "0")} projects · Austin, Texas

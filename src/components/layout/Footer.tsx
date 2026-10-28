@@ -83,7 +83,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
             {Object.entries(site.footerNav).map(([heading, links]) => (
               <nav key={heading} aria-label={`${heading} links`}>
-                <h2 className="label text-faint">{heading}</h2>
+                <h2 className="label text-faint">{heading === 'Studio' ? 'Company' : heading}</h2>
                 <ul className="mt-5 space-y-3">
                   {links.map((link) => (
                     <li key={`${heading}-${link.href}`}>

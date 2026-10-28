@@ -10,7 +10,7 @@ are not configured:
    webhooks; documents and signatures stay with the provider.
 
 ```text
-Browser ──JSON──▶ Worker /api/inquiries ──▶ Resend ──▶ studio inbox
+Browser ──JSON──▶ Worker /api/inquiries ──▶ Resend ──▶ company inbox
                                                    └──▶ optional confirmation
 
 Client  ──token─▶ Worker /api/contracts/status ──▶ KV (hashed token → status)
@@ -18,7 +18,7 @@ Dropbox Sign ──HMAC webhook──▶ Worker /api/webhooks/dropbox-sign ─�
 ```
 
 The Worker code is in [`server/src/index.ts`](../server/src/index.ts). It has no
-npm dependencies and runs on Cloudflare's free plan at typical studio volumes.
+npm dependencies and runs on Cloudflare's free plan at typical company volumes.
 No provider key is ever present in the browser bundle.
 
 ---
@@ -26,7 +26,7 @@ No provider key is ever present in the browser bundle.
 ## 1. Inquiry email (Resend)
 
 Resend is recommended for this project because it is a direct transactional
-email API with a simple HTTP interface, a free tier suitable for a studio site,
+email API with a simple HTTP interface, a free tier suitable for a company site,
 and no additional orchestration layer. The Worker calls it with `fetch`, so no
 SDK or bundling is required. Provider pricing and limits change; confirm current
 terms on your account before relying on the free tier.
@@ -40,7 +40,7 @@ terms on your account before relying on the free tier.
 5. Create an API key with sending permission.
 
 Use a dedicated mailbox such as `hello@actorallc.com` as the sender, and a real
-studio inbox as the recipient. Never use a personal address you do not monitor.
+company inbox as the recipient. Never use a personal address you do not monitor.
 
 ### 1.2 Create Cloudflare resources
 
@@ -66,7 +66,7 @@ npx wrangler secret put AUTO_REPLY         --config server/wrangler.toml
 | --- | --- | --- |
 | `RESEND_API_KEY` | `re_…` | Server only |
 | `FROM_EMAIL` | `Actora <hello@actorallc.com>` | Must be a verified domain |
-| `INQUIRY_TO_EMAIL` | `studio@actorallc.com` | Where briefs arrive |
+| `INQUIRY_TO_EMAIL` | `company@actorallc.com` | Where briefs arrive |
 | `ALLOWED_ORIGINS` | `https://actorallc.com,https://www.actorallc.com` | Comma-separated, no trailing slashes |
 | `AUTO_REPLY` | `true` or `false` | Optional confirmation to the sender |
 
@@ -96,12 +96,12 @@ yet" and will not report a false success.
   sending, so bots learn nothing.
 - Submissions faster than 2 seconds after form load are rejected (`422`).
 - Six submissions per hashed IP per 15 minutes (`429` afterwards).
-- A Resend rejection returns `502`; the visitor sees a failure and the studio's
+- A Resend rejection returns `502`; the visitor sees a failure and the company's
   direct email address.
 - Inquiry bodies are **not** stored in KV. Rate-limit keys contain a SHA-256
   hash of the IP and expire in 15 minutes. Optional Resend logs are governed by
   your Resend account settings.
-- Optional confirmation email fails independently; the studio notification is
+- Optional confirmation email fails independently; the company notification is
   what determines success.
 
 ### 1.6 Test it
@@ -121,7 +121,7 @@ curl -i -X POST https://<worker-host>/api/inquiries \
   }'
 ```
 
-Expected: `200 {"ok":true,"id":"ACT-…"}` and an email in the studio inbox.
+Expected: `200 {"ok":true,"id":"ACT-…"}` and an email in the company inbox.
 Remove `RESEND_API_KEY` and retry: expected `503` with `ok:false`. That is the
 test that proves the site cannot claim success without delivery.
 
@@ -135,7 +135,7 @@ origin rejection, honeypot handling, rate limiting and webhook verification.
 The site does not create, display or store contract documents. It provides:
 
 - a token-based **status** lookup;
-- a documented **integration interface** for the studio's chosen provider;
+- a documented **integration interface** for the company's chosen provider;
 - a team-only **registration** endpoint that links a provider request to a
   status token.
 
@@ -228,7 +228,7 @@ simulated signing flow anywhere in the codebase.
   requests. Do not add a price to the website without verifying it.
 - An e-signature provider supplies an audit trail and completion evidence, not
   legal advice. Have contracts reviewed by qualified counsel, and make sure the
-  provider's terms and data-processing terms are acceptable to the studio and
+  provider's terms and data-processing terms are acceptable to the company and
   its clients.
 - The Privacy Policy names the provider. Update it if you switch.
 

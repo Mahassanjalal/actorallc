@@ -43,9 +43,9 @@ describe("hydration", () => {
     spy.mockRestore();
 
     expect(hydrationErrors).toEqual([]);
-    expect(container.textContent).toContain("We design what");
+    expect(container.textContent).toContain("We build what");
     expect(document.title).toBe(
-      "Actora — Design and technology studio in Austin, Texas",
+      "Actora — Software and technology company in Austin, Texas",
     );
   });
 

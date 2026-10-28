@@ -52,7 +52,7 @@ export function ThankYou() {
           {confirmed ? (
             <p className="lede mt-7 max-w-xl">
               Your message reached our server and a notification is on its way
-              to the studio. We reply within two business days, usually sooner.
+              to the company. We reply within two business days, usually sooner.
             </p>
           ) : (
             <p className="lede mt-7 max-w-xl">

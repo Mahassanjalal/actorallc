@@ -1,7 +1,7 @@
-# Actora LLC — studio website
+# Actora LLC — software company website
 
-A cinematic, dark-first website for **Actora LLC**, an independent design and
-technology studio in Austin, Texas. Built with React, TypeScript, Vite and
+A professional, dark-first website for **Actora LLC**, a software and
+technology company in Austin, Texas. Built with React, TypeScript, Vite and
 Tailwind, prerendered to real HTML for fast, indexable static hosting, with a
 small serverless backend reference for inquiries and contract status.
 
@@ -13,8 +13,8 @@ small serverless backend reference for inquiries and contract status.
 
 ## Highlights
 
-- **Cinematic but restrained** — an aperture-led hero, editorial typography,
-  hairline grids and one deliberate marquee. Motion is short, purposeful and
+- **Professional and focused** — a clean hero, clear typography,
+  structured layouts and purposeful motion. Motion is short, purposeful and
   disabled for `prefers-reduced-motion`.
 - **Real static HTML** — every route is prerendered with unique metadata,
   canonical URLs, Open Graph tags and JSON-LD. Deep links work on GitHub Pages
@@ -108,7 +108,7 @@ Everything a non-developer is likely to change lives in
 
 - brand name, legal name, wordmark, tagline, headline, description;
 - contact emails, optional phone, social links, newsletter flag;
-- services, process, values and case studies;
+- software services, development process, values and case studies;
 - legal dates, retention period and jurisdiction;
 - integration provider names and public endpoint URLs;
 - the preview-content notice.
@@ -150,7 +150,7 @@ variable. Server secrets belong in the Worker (see
 - **Contact / Start a project** validate in the browser and again on the server.
   The browser posts JSON to `${VITE_INQUIRY_ENDPOINT}/api/inquiries`; a success
   page appears only after the Worker returns a receipt. Without an endpoint, the
-  form is visibly disabled in spirit and explains how to reach the studio.
+  form is visibly disabled in spirit and explains how to reach the company.
 - **Contracts** are issued in the provider's dashboard. The Worker stores a
   hashed access token → status record and updates it from verified webhooks. The
   `/contracts` page offers a token-based status lookup and clearly states when
@@ -238,7 +238,7 @@ or business history. To finalize:
    currently use the reserved `.example` domain. Add a real phone only if
    published.
 3. **Services and process** — confirm the four placeholder services and the
-   four-phase process match what the studio actually offers.
+   four-phase development process match what the company actually offers.
 4. **Case studies** — replace the three `sample: true` projects with approved
    work, real context and verified results. Remove `sample` flags when done.
 5. **Team** — add names, roles and approved bios to `site.team` or leave the

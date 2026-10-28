@@ -454,14 +454,12 @@ async function handleInquiry(request: Request, env: Env, cors: Record<string, st
       to: [validation.value.email],
       subject: "We received your message — Actora",
       html: `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:560px;color:#111">
-  <p>Hello ${escapeHtml(validation.value.name.split(" ")[0] || "there")},</p>
-  <p>Thank you for writing to Actora. Your message has reached the studio and we will reply within two business days.</p>
+  <p>Hello ${escapeHtml(validation.value.name.split(" ")[0] || "there")},</p>   <p>Thank you for writing to Actora. Your message has reached the company and we will reply within two business days.</p>
   <p style="color:#6b7280;font-size:13px">Reference: ${escapeHtml(id)}</p>
   <p>— Actora LLC, Austin, Texas</p>
 </div>`,
     });
-    // A failed confirmation does not invalidate the received inquiry; the
-    // studio notification already succeeded.
+    // A failed confirmation does not invalidate the received inquiry; the     // company notification already succeeded.
     if (!confirmation.ok) {
       console.warn("confirmation email failed", confirmation.status);
     }

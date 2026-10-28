@@ -40,7 +40,7 @@ When those constraints are visible in the design review, the team makes differen
 
 ## Fewer moving parts, longer life
 
-Static output is durable. There is no server process to patch, no database to migrate, no cache to warm incorrectly. Deployments become an atomic set of files, and a rollback is a revert commit. For a small studio site, that reliability is worth more than a bespoke admin panel.
+Static output is durable. There is no server process to patch, no database to migrate, no cache to warm incorrectly. Deployments become an atomic set of files, and a rollback is a revert commit. For a small company site, that reliability is worth more than a bespoke admin panel.
 
 Content can still be edited by non-developers. Markdown files in the repository, reviewed through a pull request, are a publishing workflow with version history and an audit trail built in. When a browser-based editor is genuinely required, a Git-based CMS can add one without moving rendering to a server.
 
