@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+.ssr/
+*.local
+
+# Environment (never commit real values)
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Tooling output
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+.tmp/
+.dev-server.log
+.dev-server.pid
