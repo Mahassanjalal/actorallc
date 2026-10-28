@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      VITE_SITE_URL: https://actorallc.example
+      VITE_SITE_URL: https://actora.us
       VITE_BASE_PATH: /
     steps:
       - name: Checkout
