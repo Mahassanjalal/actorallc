@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { WorkSample } from "@/config/site";
 import { AbstractArt } from "@/components/visuals/AbstractArt";
 import { cn } from "@/lib/cn";
@@ -27,11 +26,10 @@ function GithubIcon({ className }: { className?: string }) {
 
 interface WorkCardProps {
   project: WorkSample;
-  index: number;
   className?: string;
 }
 
-export function WorkCard({ project, index, className }: WorkCardProps) {
+export function WorkCard({ project, className }: WorkCardProps) {
   const githubUrl = getGithubUrl(project.slug);
 
   return (

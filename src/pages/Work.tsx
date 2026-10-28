@@ -3,11 +3,8 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { WorkCard } from "@/components/cards/WorkCard";
 import { ClosingCTA } from "@/components/sections/ClosingCTA";
-import { StatusMessage } from "@/components/ui/StatusMessage";
 
 export function Work() {
-  const hasSamples = work.some((project) => project.sample);
-
   return (
     <>
       <PageHeader
@@ -35,7 +32,7 @@ export function Work() {
             {work.map((project, index) => (
               <Reveal key={project.slug} delay={index * 40}>
                 <div className="p-4 sm:p-5">
-                  <WorkCard project={project} index={index} />
+                  <WorkCard project={project} />
                 </div>
               </Reveal>
             ))}
