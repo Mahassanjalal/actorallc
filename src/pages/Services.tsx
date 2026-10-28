@@ -90,6 +90,21 @@ export function Services() {
               <aside className="lg:col-span-3">
                 <Reveal delay={120}>
                   <div className="rounded-lg border border-line bg-ink-raised p-6">
+                    {service.technologies && (
+                      <div className="mb-5">
+                        <h3 className="label text-faint">Technologies</h3>
+                        <div className="mt-3 flex flex-wrap gap-1.5">
+                          {service.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-md border border-line/60 bg-surface/50 px-2.5 py-1 text-[11px] text-muted"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     <h3 className="label text-faint">Outcomes</h3>
                     <ul className="mt-4 space-y-3">
                       {service.outcomes.map((outcome) => (

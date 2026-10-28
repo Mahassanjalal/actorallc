@@ -345,55 +345,174 @@ export const values = [
 
 export const work: WorkSample[] = [
   {
-    slug: "inventory-management-system",
-    title: "Inventory Management System",
-    discipline: "Custom Software Development",
-    year: "Sample",
-    summary:
-      "A custom inventory management system built for a manufacturing company to track materials, automate reordering, and provide real-time visibility across multiple warehouse locations.",
-    context:
-      "This is placeholder content used to demonstrate the case-study structure. Replace it with a verified project: the client's industry, the specific inventory challenges they faced, and the scale of operations.",
-    approach:
-      "Describe the technical approach — the architecture chosen, the technology stack, how you handled real-time updates, and how the system integrates with existing ERP or accounting software.",
-    outcome:
-      "State the confirmed results: time saved, errors reduced, inventory accuracy improved, or any other measurable impact the client approved for publication.",
-    capabilities: ["Custom Development", "Database Design", "Real-time Systems", "ERP Integration"],
-    sample: true,
-    art: { from: "#1a1a22", to: "#07070a", accent: "#ff6a3d", seed: 7 },
-  },
-  {
-    slug: "customer-portal-platform",
-    title: "Customer Portal Platform",
+    slug: "hostel-management",
+    title: "Hostel Management System",
     discipline: "Web Applications",
-    year: "Sample",
+    year: "2024",
     summary:
-      "A customer portal built for a service company to provide clients with self-service access to their accounts, project status, documentation, and support ticketing.",
+      "A comprehensive hostel management platform streamlining student accommodations, room allocations, fee management, and administrative workflows for educational institutions.",
     context:
-      "Placeholder case study. Use this space for the real context: the number of users, the features requested, security requirements, and how the portal integrates with existing business systems.",
+      "Built for hostel administrators and students needing centralized management of rooms, bookings, payments, and communication. Handles multiple hostel properties with role-based access control.",
     approach:
-      "Describe the technical implementation — the front-end framework, back-end architecture, authentication system, and how you ensured a great user experience while meeting security requirements.",
+      "Developed a full-stack web application with modern JavaScript frameworks, implementing real-time room availability tracking, automated payment reminders, and an intuitive dashboard for administrators.",
     outcome:
-      "Add only results that were measured and approved for publication: user adoption rates, support ticket reduction, customer satisfaction improvements, or operational efficiency gains.",
-    capabilities: ["Web Development", "User Authentication", "API Development", "UX Design"],
-    sample: true,
-    art: { from: "#101a1f", to: "#07090b", accent: "#a8c3ff", seed: 19 },
+      "Reduced administrative workload by automating manual processes, improved booking efficiency, and provided transparent communication channels between administrators and residents.",
+    capabilities: ["Full-Stack Development", "Database Design", "Payment Integration", "Role-Based Access"],
+    sample: false,
+    art: { from: "#0f172a", to: "#1e293b", accent: "#3b82f6", seed: 42 },
   },
   {
-    slug: "business-process-automation",
-    title: "Business Process Automation",
-    discipline: "Enterprise Solutions",
-    year: "Sample",
+    slug: "dairy-pos",
+    title: "DairyPOS",
+    discipline: "Custom Software Development",
+    year: "2024",
     summary:
-      "An automation solution built for a mid-size company to streamline their document approval workflows, reducing manual processing time and improving compliance tracking.",
+      "A specialized point-of-sale system designed for dairy and agricultural businesses, handling inventory tracking, sales transactions, and supply chain management.",
     context:
-      "Placeholder case study for an enterprise automation project. Swap in the real client scenario, the legacy processes being replaced, the number of employees affected, and the compliance requirements.",
+      "Created for dairy farm operations and retail outlets requiring precise inventory control of perishable goods, batch tracking, and integration with suppliers.",
     approach:
-      "Note the automation strategy, the systems integrated, how you handled data migration, and the change management approach that ensured smooth adoption across the organization.",
+      "Built a robust POS system with offline-first capabilities, barcode scanning integration, expiration tracking, and detailed sales analytics for business optimization.",
     outcome:
-      "Publish confirmed results when available: time saved per workflow, error reduction, cost savings, or employee productivity improvements approved for publication.",
-    capabilities: ["Process Automation", "System Integration", "Enterprise Software", "Change Management"],
-    sample: true,
-    art: { from: "#1c1520", to: "#08070a", accent: "#e0b9ff", seed: 31 },
+      "Enabled accurate inventory tracking for perishable products, reduced waste through better expiration management, and streamlined daily sales operations.",
+    capabilities: ["POS Development", "Inventory Management", "Offline-First Architecture", "Analytics"],
+    sample: false,
+    art: { from: "#14532d", to: "#166534", accent: "#22c55e", seed: 15 },
+  },
+  {
+    slug: "z-shop-store-saas",
+    title: "Z-Shop SaaS",
+    discipline: "Web Applications",
+    year: "2024",
+    summary:
+      "A multi-tenant SaaS e-commerce platform enabling businesses to create and manage their online stores with customizable themes, payment processing, and order management.",
+    context:
+      "Developed for entrepreneurs and small businesses needing an affordable, scalable solution to launch online stores without technical expertise.",
+    approach:
+      "Architected a multi-tenant architecture with isolated customer data, built-in payment processing, customizable storefront themes, and comprehensive admin dashboards for store management.",
+    outcome:
+      "Empowered multiple businesses to establish their online presence with minimal setup time, providing enterprise-level features at accessible pricing.",
+    capabilities: ["SaaS Architecture", "Multi-Tenant Systems", "E-Commerce", "Payment Processing"],
+    sample: false,
+    art: { from: "#1e1b4b", to: "#312e81", accent: "#8b5cf6", seed: 28 },
+  },
+  {
+    slug: "qanawat-ai",
+    title: "Qanawat AI",
+    discipline: "AI/ML Solutions",
+    year: "2024",
+    summary:
+      "AI-powered decision support system for sewer CCTV inspection and infrastructure rehabilitation, combining computer vision with engineering expertise.",
+    context:
+      "A modular monolith built with Next.js/React and FastAPI/Python, using Celery workers for video and document processing. Includes demonstration data for AI predictions, rules, rates, and accounts.",
+    approach:
+      "Integrated AI prediction models with traditional business rules, implemented asynchronous job processing for video analysis, and created an intuitive interface for inspection engineers.",
+    outcome:
+      "Accelerated infrastructure assessment workflows, provided data-driven rehabilitation recommendations, and demonstrated practical AI application in civil engineering.",
+    capabilities: ["AI/ML Integration", "Computer Vision", "Video Processing", "FastAPI", "Next.js"],
+    sample: false,
+    art: { from: "#0c0a09", to: "#292524", accent: "#f97316", seed: 56 },
+  },
+  {
+    slug: "chatterly",
+    title: "Chatterly",
+    discipline: "Web Applications",
+    year: "2024",
+    summary:
+      "A modern random video chat platform connecting people worldwide for spontaneous, secure conversations with emphasis on privacy and user experience.",
+    context:
+      "Built for users seeking authentic connections through video chat, with robust safety features, moderation tools, and seamless cross-device experience.",
+    approach:
+      "Developed a real-time video communication platform with WebRTC technology, implemented safety filters and reporting mechanisms, and prioritized performance across web and mobile devices.",
+    outcome:
+      "Created a secure environment for global connections, implemented comprehensive safety measures, and delivered smooth real-time video experiences.",
+    capabilities: ["Real-Time Video", "WebRTC", "Privacy & Security", "Cross-Platform"],
+    sample: false,
+    art: { from: "#0f172a", to: "#1e1b4b", accent: "#ec4899", seed: 73 },
+  },
+  {
+    slug: "child-sponsorship-platform",
+    title: "Child Sponsorship Platform",
+    discipline: "Web Applications",
+    year: "2024",
+    summary:
+      "A full-stack platform connecting sponsors with children needing educational support, featuring recurring payments, progress tracking, and transparent reporting.",
+    context:
+      "Built for charitable organizations facilitating child sponsorship programs with Stripe payment integration, progress updates, and impact reporting for donors.",
+    approach:
+      "Developed a compassionate platform with secure payment processing, photo and story updates from sponsored children, milestone tracking, and transparent financial reporting for donors.",
+    outcome:
+      "Streamlined the sponsorship process, increased donor engagement through regular updates, and provided transparency that builds trust in charitable programs.",
+    capabilities: ["Full-Stack Development", "Stripe Integration", "Progress Tracking", "Impact Reporting"],
+    sample: false,
+    art: { from: "#064e3b", to: "#047857", accent: "#10b981", seed: 88 },
+  },
+  {
+    slug: "northstar-talent",
+    title: "Northstar Talent",
+    discipline: "Enterprise Solutions",
+    year: "2024",
+    summary:
+      "A comprehensive recruitment management system for staffing agencies, unifying client accounts, job requisitions, candidate pipelines, interviews, offers, and billing.",
+    context:
+      "Designed for staffing agencies managing multiple clients and candidates simultaneously, with AI-assisted agents for routine tasks and human oversight for important decisions.",
+    approach:
+      "Built an integrated RMS with complete hiring workflow automation, AI-assisted candidate matching, approval queues for consequential decisions, and comprehensive analytics for business intelligence.",
+    outcome:
+      "Centralized recruitment operations, reduced time-to-hire through AI assistance, maintained quality control through human review processes, and provided actionable hiring analytics.",
+    capabilities: ["Enterprise RMS", "AI-Assisted Recruitment", "Pipeline Management", "Billing Integration"],
+    sample: false,
+    art: { from: "#1e1b4b", to: "#0f172a", accent: "#f59e0b", seed: 34 },
+  },
+  {
+    slug: "fitcore",
+    title: "FitCore",
+    discipline: "SaaS Platforms",
+    year: "2024",
+    summary:
+      "A multi-tenant SaaS gym management system providing fitness centers with membership management, class scheduling, trainer coordination, and member engagement tools.",
+    context:
+      "Created for gym owners and fitness centers needing a complete business management solution with member portals, automated billing, and operational dashboards.",
+    approach:
+      "Architected a scalable multi-tenant system with role-based access for gym staff and members, integrated payment processing for memberships, and built scheduling tools for classes and personal training.",
+    outcome:
+      "Simplified gym operations, automated membership billing, improved member engagement through digital tools, and provided gym owners with comprehensive business insights.",
+    capabilities: ["SaaS Architecture", "Membership Management", "Scheduling Systems", "Multi-Tenant"],
+    sample: false,
+    art: { from: "#1c1917", to: "#78716c", accent: "#ef4444", seed: 61 },
+  },
+  {
+    slug: "pulse-social",
+    title: "Pulse",
+    discipline: "Web Applications",
+    year: "2024",
+    summary:
+      "A modern social media platform enabling users to share content, connect with communities, and engage through intuitive social features and real-time interactions.",
+    context:
+      "Built for users seeking an alternative social media experience with focus on meaningful connections, content discovery, and community building.",
+    approach:
+      "Developed a feature-rich social platform with user profiles, content feeds, engagement mechanics, privacy controls, and scalable infrastructure for growing user bases.",
+    outcome:
+      "Created an engaging social environment, implemented modern content sharing capabilities, and built infrastructure supporting community growth and interaction.",
+    capabilities: ["Social Platform", "Real-Time Features", "Content Management", "Community Features"],
+    sample: false,
+    art: { from: "#0f172a", to: "#27272a", accent: "#a855f7", seed: 47 },
+  },
+  {
+    slug: "fms-poultry",
+    title: "FMS - Poultry Farm Management",
+    discipline: "Enterprise Solutions",
+    year: "2024",
+    summary:
+      "A comprehensive poultry farm management system built as a monorepo with NestJS backend, Next.js frontend, and Expo mobile app for farm operations and monitoring.",
+    context:
+      "Developed for poultry farm businesses requiring integrated management of inventory, livestock tracking, feed management, production metrics, and mobile access for field operations.",
+    approach:
+      "Created a unified monorepo solution with shared types and utilities, built a robust NestJS API, responsive Next.js web dashboard, and Expo mobile application for on-site farm management.",
+    outcome:
+      "Centralized farm operations management, enabled mobile access for field workers, improved inventory and production tracking, and provided real-time insights for farm decision-making.",
+    capabilities: ["Monorepo Architecture", "NestJS", "Next.js", "Expo Mobile", "Farm Management"],
+    sample: false,
+    art: { from: "#14532d", to: "#14532d", accent: "#16a34a", seed: 92 },
   },
 ];
 
