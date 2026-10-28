@@ -187,7 +187,7 @@ export function Home() {
           <div className="mt-16 space-y-16 md:space-y-24">
             {work.map((project, index) => (
               <Reveal key={project.slug} delay={index * 40}>
-                <WorkCard project={project} index={index} />
+                <WorkCard project={project} />
               </Reveal>
             ))}
           </div>
