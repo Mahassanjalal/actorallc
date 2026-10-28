@@ -41,7 +41,8 @@ export interface ServiceConfig {
   outcomes: string[];
   deliverables: string[];
   idealFor: string;
-  /** True until the studio confirms this is a real service offering. */
+  technologies?: string[];
+  /** True until the company confirms this is a real service offering. */
   placeholder: boolean;
 }
 
@@ -74,18 +75,18 @@ export const site = {
   legalName: "Actora LLC",
   wordmark: "ACTORA",
   tagline:
-    "An independent design and technology studio in Austin, Texas.", // PLACEHOLDER positioning
+    "A software and technology company in Austin, Texas.", // PLACEHOLDER positioning
   description:
-    "Actora LLC is a design and technology studio in Austin, Texas, creating brand systems, digital products and web platforms.",
+    "Actora LLC is a software and technology company in Austin, Texas, building custom software solutions, digital products and enterprise platforms.",
   headline: {
-    lead: "We design what",
+    lead: "We build what",
     serif: "comes next",
     tail: ".",
   },
   heroSupport:
-    "Actora is a design and technology studio in Austin, Texas. We build identities, products, and platforms for people who intend to matter.",
+    "Actora is a software and technology company in Austin, Texas. We build custom software, digital products, and enterprise platforms for businesses that intend to lead.",
   statement:
-    "Most work disappears. We make the kind that stays in the room — considered, engineered, and impossible to mistake for anyone else's.",
+    "Most software fades into the background. We build the kind that transforms how businesses operate — engineered, scalable, and impossible to mistake for anyone else's.",
   austin: {
     locality: "Austin",
     region: "TX",
@@ -132,7 +133,7 @@ export const site = {
     { label: "Contact", href: "/contact" },
   ],
   footerNav: {
-    Studio: [
+    Company: [
       { label: "About", href: "/about" },
       { label: "Services", href: "/services" },
       { label: "Work", href: "/work" },
@@ -167,7 +168,7 @@ export const site = {
       "Preview build — sample copy, sample case studies and placeholder contact details. Company-approved content is required before launch.",
   },
 
-  // Add members only when the studio supplies names, roles and photos.
+  // Add members only when the company supplies names, roles and photos.
   team: [] as Array<{ name: string; role: string; bio: string }>,
 
   /* ------------------------------------------------ external integrations */
@@ -182,95 +183,104 @@ export const site = {
 
 export const services: ServiceConfig[] = [
   {
-    slug: "brand-identity",
+    slug: "custom-software",
     index: "01",
-    title: "Brand & Identity",
+    title: "Custom Software Development",
     summary:
-      "Positioning, naming support and identity systems that give ambitious companies a language of their own.",
+      "Tailored software solutions built to solve your specific business challenges — from internal tools to customer-facing applications.",
     description: [
-      "A brand is a decision-making system. We build it with you: positioning that can survive a board meeting, a visual language that holds up at any size, and guidelines your team will actually use.",
-      "Engagements are led by a small senior team. Research, strategy, identity, and the first applications are developed together so the system is proven before it is handed over.",
+      "We develop custom software that fits your exact requirements: web applications, desktop tools, and integrated systems that streamline your operations and drive growth.",
+      "Every project starts with understanding your business logic, user needs, and technical constraints. We architect for scale, security, and maintainability from day one.",
     ],
     outcomes: [
-      "A clear, defensible market position",
-      "Identity system with type, colour and motion rules",
-      "Applications for the moments that matter most",
+      "A custom solution that fits your exact workflow",
+      "Clean, documented, and testable codebase",
+      "System your team can extend and maintain",
     ],
     deliverables: [
-      "Positioning and messaging framework",
-      "Logo suite and visual identity system",
-      "Brand guidelines and asset library",
+      "Requirements analysis and technical specification",
+      "Fully functional software application",
+      "API documentation and integration guides",
+      "Deployment and operations documentation",
     ],
-    idealFor: "Companies at a launch, repositioning or funding milestone.",
+    idealFor: "Businesses with unique workflows that off-the-shelf software cannot address.",
+    technologies: ["React", "TypeScript", "Node.js", ".NET", "Python"],
     placeholder: true,
   },
   {
-    slug: "digital-product",
+    slug: "web-applications",
     index: "02",
-    title: "Digital Product",
+    title: "Web Applications",
     summary:
-      "Product strategy, interaction design and interface systems for software people choose to keep using.",
+      "High-performance web applications that deliver exceptional user experiences and handle real-world traffic at scale.",
     description: [
-      "We work on the product itself: the flows, the interface language, and the details that decide whether someone trusts what they are using.",
-      "Discovery is hands-on. We prototype early, test with real people, and ship a system rather than a one-off screen set.",
+      "We build modern web applications using cutting-edge technologies. From SaaS platforms to complex dashboards, we create applications that are fast, accessible, and reliable.",
+      "Our web applications are built with performance and security as core requirements — not afterthoughts. We implement proper authentication, data validation, and error handling.",
     ],
     outcomes: [
-      "A tested product direction, not a deck",
-      "Interface system ready for engineering",
-      "Clear patterns for future features",
+      "A fast, responsive web application",
+      "Secure authentication and authorization",
+      "Scalable architecture for growth",
     ],
     deliverables: [
-      "Product strategy and flow mapping",
-      "Interactive prototypes and usability testing",
-      "Design system and component specifications",
+      "Responsive front-end application",
+      "Back-end API and database design",
+      "User authentication and role-based access",
+      "Performance optimization and monitoring",
     ],
-    idealFor: "Teams building or reworking a core product experience.",
+    idealFor: "Companies needing customer-facing web apps or internal business tools.",
+    technologies: ["React", "Next.js", "Vue.js", "Node.js", "PostgreSQL", "MongoDB"],
     placeholder: true,
   },
   {
-    slug: "web-platforms",
+    slug: "enterprise-solutions",
     index: "03",
-    title: "Web & Platforms",
+    title: "Enterprise Solutions",
     summary:
-      "Fast, accessible, maintainable websites and platforms — engineered to hold up under real traffic and real teams.",
+      "Robust enterprise software that integrates with your existing systems and scales with your organization's growth.",
     description: [
-      "We build the production layer: static-first front ends, typed component systems, and integrations that keep content teams independent of engineering.",
-      "Performance, accessibility, and security are budgeted from the first sprint, then verified in CI before anything ships.",
+      "We design and build enterprise-grade software that connects with your ERP, CRM, and other business systems. Our solutions handle complex workflows, large datasets, and demanding performance requirements.",
+      "Enterprise projects include thorough testing, security audits, compliance considerations, and comprehensive documentation to support your IT team.",
     ],
     outcomes: [
-      "Measurable speed and accessibility gains",
-      "A codebase your team can extend",
-      "Deployment pipelines with review built in",
+      "Integrated enterprise system",
+      "Automated business workflows",
+      "Enterprise-grade security and compliance",
     ],
     deliverables: [
-      "Design-system-driven front-end build",
-      "Content model and publishing workflow",
-      "CI/CD, monitoring and handover documentation",
+      "System architecture and integration design",
+      "Custom enterprise application",
+      "API integrations with existing systems",
+      "Security audit and compliance documentation",
+      "Training materials and user guides",
     ],
-    idealFor: "Marketing sites, platforms and internal tools that must endure.",
+    idealFor: "Mid-size to large organizations needing custom enterprise software or system integration.",
+    technologies: ["Enterprise Integration", "Microservices", "Cloud Infrastructure", "Docker", "Kubernetes"],
     placeholder: true,
   },
   {
-    slug: "film-motion",
+    slug: "digital-transformation",
     index: "04",
-    title: "Film & Motion",
+    title: "Digital Transformation",
     summary:
-      "Art direction, motion identity and product film for brands that need to be felt, not just read.",
+      "Strategic technology consulting and implementation to modernize your business processes and accelerate digital adoption.",
     description: [
-      "Motion is part of the identity, not a decoration applied afterwards. We define how the brand moves, then produce the films and interface motion that carry it.",
-      "Every sequence is designed for its context — a launch film, a product walkthrough, or the micro-motion inside an interface.",
+      "We help organizations navigate digital transformation — from assessing current systems and identifying opportunities to implementing modern solutions that deliver measurable results.",
+      "Our approach combines technical expertise with business understanding. We work with stakeholders at all levels to ensure technology investments deliver real business value.",
     ],
     outcomes: [
-      "A motion language that matches the brand",
-      "Launch and product films ready for distribution",
-      "Reusable animation specifications for product teams",
+      "Modernized business processes",
+      "Reduced operational costs",
+      "Improved customer and employee experience",
     ],
     deliverables: [
-      "Motion direction and storyboards",
-      "Production and post for launch films",
-      "Interface motion tokens and specs",
+      "Current state assessment and gap analysis",
+      "Digital transformation roadmap",
+      "Technology stack recommendations",
+      "Implementation and change management support",
     ],
-    idealFor: "Launches, campaigns and product storytelling.",
+    idealFor: "Organizations looking to modernize legacy systems or adopt new technologies.",
+    technologies: ["Cloud Migration", "Process Automation", "Data Analytics", "AI/ML Integration"],
     placeholder: true,
   },
 ];
@@ -278,110 +288,110 @@ export const services: ServiceConfig[] = [
 export const process: ProcessStep[] = [
   {
     index: "01",
-    title: "Signal",
+    title: "Discovery",
     duration: "Week 1–2",
     description:
-      "We start by listening — to your team, your customers, and the market. Then we agree on the single idea the work has to prove.",
+      "We start by understanding your business — your workflows, your users, your technical environment, and the problem we need to solve.",
     points: [
-      "Stakeholder and customer interviews",
-      "Competitive and category audit",
-      "A written brief with success measures",
+      "Stakeholder interviews and requirements gathering",
+      "Technical assessment and feasibility analysis",
+      "Project scope and success criteria definition",
     ],
   },
   {
     index: "02",
-    title: "Shape",
+    title: "Design",
     duration: "Week 2–4",
     description:
-      "Strategy becomes something you can see. We explore directions in parallel, test the strongest one, and commit together.",
-    points: ["Territory development", "Prototypes over presentations", "A decision log you keep"],
+      "We architect the solution — system design, database schema, API contracts, and user experience. We validate the approach before writing production code.",
+    points: ["System architecture design", "Database and API design", "Technical specification document"],
   },
   {
     index: "03",
-    title: "Build",
-    duration: "Week 4–8",
+    title: "Development",
+    duration: "Week 4–12",
     description:
-      "Design and engineering work in the same room. We build the production system as we design it, so nothing is lost in handover.",
-    points: ["Weekly working sessions", "Accessible, typed components", "Performance budgets in CI"],
+      "We build the software iteratively, with regular demos and feedback loops. Every feature is tested, documented, and ready for deployment.",
+    points: ["Agile development with sprint reviews", "Automated testing and CI/CD", "Code reviews and documentation"],
   },
   {
     index: "04",
-    title: "Launch",
-    duration: "Week 8+",
+    title: "Deployment",
+    duration: "Week 12+",
     description:
-      "We ship, measure, and stay close. After launch we review real behaviour and tune what matters.",
-    points: ["Deployment runbook and training", "Post-launch measurement", "Ongoing partnership if useful"],
+      "We deploy to production, train your team, and provide ongoing support. We ensure a smooth transition and monitor performance after launch.",
+    points: ["Production deployment and monitoring", "Team training and handover", "Post-launch support and maintenance"],
   },
 ];
 
 export const values = [
   {
-    title: "Clarity over volume",
-    body: "Fewer, better decisions. Every element has a job, and the work is stronger for what it leaves out.",
+    title: "Engineering excellence",
+    body: "We write clean, tested, maintainable code. Every technical decision is made with long-term maintainability in mind.",
   },
   {
-    title: "Craft is a discipline",
-    body: "Typography, motion, performance and accessibility are not finishing touches. They are the work.",
+    title: "Business-first approach",
+    body: "Technology serves business goals. We understand your operations, your users, and your bottom line — and build accordingly.",
   },
   {
-    title: "Build in the open",
-    body: "No black boxes. You see the process, the prototypes and the trade-offs while they are still changeable.",
+    title: "Transparency throughout",
+    body: "No black boxes. You see progress, understand trade-offs, and have a clear view of where your project stands at all times.",
   },
   {
-    title: "Leave it stronger",
-    body: "The best outcome is a team that can carry the system forward without us in the room.",
+    title: "Partnership, not vendor relationship",
+    body: "We invest in your success. Our goal is to deliver software that transforms your business and a team that understands how to keep it running.",
   },
 ];
 
 export const work: WorkSample[] = [
   {
-    slug: "northlight",
-    title: "Northlight",
-    discipline: "Brand + Digital Product",
+    slug: "inventory-management-system",
+    title: "Inventory Management System",
+    discipline: "Custom Software Development",
     year: "Sample",
     summary:
-      "A sample case-study layout showing how a brand system and product interface could be presented together.",
+      "A custom inventory management system built for a manufacturing company to track materials, automate reordering, and provide real-time visibility across multiple warehouse locations.",
     context:
-      "This is placeholder content used to demonstrate the case-study structure. Replace it with a verified project: who the client is, the situation they were in, and the constraint that made the problem interesting.",
+      "This is placeholder content used to demonstrate the case-study structure. Replace it with a verified project: the client's industry, the specific inventory challenges they faced, and the scale of operations.",
     approach:
-      "Describe the engagement honestly — the research, the directions explored, the decisions made and the trade-offs accepted. Avoid invented metrics.",
+      "Describe the technical approach — the architecture chosen, the technology stack, how you handled real-time updates, and how the system integrates with existing ERP or accounting software.",
     outcome:
-      "State the confirmed result, ideally with a number the client has approved for publication. Until then, this sample remains clearly labelled.",
-    capabilities: ["Strategy", "Identity", "Product design"],
+      "State the confirmed results: time saved, errors reduced, inventory accuracy improved, or any other measurable impact the client approved for publication.",
+    capabilities: ["Custom Development", "Database Design", "Real-time Systems", "ERP Integration"],
     sample: true,
     art: { from: "#1a1a22", to: "#07070a", accent: "#ff6a3d", seed: 7 },
   },
   {
-    slug: "meridian-atlas",
-    title: "Meridian Atlas",
-    discipline: "Web Platform",
+    slug: "customer-portal-platform",
+    title: "Customer Portal Platform",
+    discipline: "Web Applications",
     year: "Sample",
     summary:
-      "A sample platform case study focused on speed, accessibility and a content workflow a small team can run.",
+      "A customer portal built for a service company to provide clients with self-service access to their accounts, project status, documentation, and support ticketing.",
     context:
-      "Placeholder case study. Use this space for the real operating context: the existing stack, the team size, the business pressure and the accessibility or performance targets.",
+      "Placeholder case study. Use this space for the real context: the number of users, the features requested, security requirements, and how the portal integrates with existing business systems.",
     approach:
-      "Replace with how the platform was designed and engineered — architecture choices, component system, editorial tooling, and how the work was validated.",
+      "Describe the technical implementation — the front-end framework, back-end architecture, authentication system, and how you ensured a great user experience while meeting security requirements.",
     outcome:
-      "Add only results that were measured and approved for publication. Sample copy intentionally makes no performance or revenue claims.",
-    capabilities: ["Design system", "Front-end engineering", "CMS"],
+      "Add only results that were measured and approved for publication: user adoption rates, support ticket reduction, customer satisfaction improvements, or operational efficiency gains.",
+    capabilities: ["Web Development", "User Authentication", "API Development", "UX Design"],
     sample: true,
     art: { from: "#101a1f", to: "#07090b", accent: "#a8c3ff", seed: 19 },
   },
   {
-    slug: "afterimage",
-    title: "Afterimage",
-    discipline: "Film + Motion",
+    slug: "business-process-automation",
+    title: "Business Process Automation",
+    discipline: "Enterprise Solutions",
     year: "Sample",
     summary:
-      "A sample motion-led launch case study showing film, interface motion and art direction in one narrative.",
+      "An automation solution built for a mid-size company to streamline their document approval workflows, reducing manual processing time and improving compliance tracking.",
     context:
-      "Placeholder case study for a launch film and motion identity. Swap in the real brief, audience, and the distribution plan for the finished work.",
+      "Placeholder case study for an enterprise automation project. Swap in the real client scenario, the legacy processes being replaced, the number of employees affected, and the compliance requirements.",
     approach:
-      "Note the art direction, the production approach, and how the motion language was specified so product teams could reuse it.",
+      "Note the automation strategy, the systems integrated, how you handled data migration, and the change management approach that ensured smooth adoption across the organization.",
     outcome:
-      "Publish confirmed distribution and audience results when available. This sample deliberately claims none.",
-    capabilities: ["Art direction", "Motion identity", "Film"],
+      "Publish confirmed results when available: time saved per workflow, error reduction, cost savings, or employee productivity improvements approved for publication.",
+    capabilities: ["Process Automation", "System Integration", "Enterprise Software", "Change Management"],
     sample: true,
     art: { from: "#1c1520", to: "#08070a", accent: "#e0b9ff", seed: 31 },
   },

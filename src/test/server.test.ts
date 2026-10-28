@@ -36,7 +36,7 @@ function env(overrides: Partial<Env> = {}): Env {
   return {
     RESEND_API_KEY: "re_test",
     FROM_EMAIL: "Actora <hello@example.com>",
-    INQUIRY_TO_EMAIL: "studio@example.com",
+    INQUIRY_TO_EMAIL: "company@example.com",
     ALLOWED_ORIGINS: ORIGIN,
     AUTO_REPLY: "false",
     RATE_LIMIT: mockKV() as unknown as Env["RATE_LIMIT"],
@@ -149,7 +149,7 @@ describe("inquiry endpoint", () => {
     expect(body.id).toMatch(/^ACT-/);
     expect(resend).toHaveBeenCalledTimes(1);
     const [, init] = resend.mock.calls[0];
-    expect(JSON.parse(String(init.body)).to).toEqual(["studio@example.com"]);
+    expect(JSON.parse(String(init.body)).to).toEqual(["company@example.com"]);
   });
 
   it("returns a failure (never success) when the provider rejects the email", async () => {

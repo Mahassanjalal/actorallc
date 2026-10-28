@@ -15,18 +15,18 @@ import { Mark } from "@/components/visuals/Mark";
 const principles = [
   {
     index: "A",
-    title: "Considered",
-    body: "Strategy first. We remove what does not earn its place, so what remains can do real work.",
+    title: "Engineered",
+    body: "We build software with performance, security, and maintainability at its core — not as afterthoughts.",
   },
   {
     index: "B",
-    title: "Engineered",
-    body: "Design and code move together, with performance, accessibility and maintainability built in.",
+    title: "Scalable",
+    body: "Architecture that grows with your business. Systems designed to handle increased load and evolving requirements.",
   },
   {
     index: "C",
-    title: "Enduring",
-    body: "Systems your team can operate: documented components, clear rules, no dependence on us.",
+    title: "Reliable",
+    body: "Thoroughly tested, well-documented software your team can depend on and extend with confidence.",
   },
 ];
 
@@ -44,7 +44,7 @@ export function Home() {
           <div className="lg:col-span-7">
             <p className="fade-up label">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-ember" />
-              Independent studio — {site.austin.locality}, {site.austin.region}
+              Software & Technology — {site.austin.locality}, {site.austin.region}
             </p>
 
             <h1
@@ -83,7 +83,7 @@ export function Home() {
               <div>
                 <dt className="label text-faint">Practice</dt>
                 <dd className="mt-2 text-sm text-bone">
-                  Brand, product, web &amp; motion
+                  Custom Software, Web Apps, Enterprise Solutions
                 </dd>
               </div>
               <div className="col-span-2 sm:col-span-1">
@@ -118,12 +118,12 @@ export function Home() {
 
       <Marquee
         items={[
-          "Brand systems",
-          "Digital products",
-          "Web platforms",
-          "Motion identity",
-          "Editorial design",
-          "Performance engineering",
+          "Custom Software Development",
+          "Web Applications",
+          "Enterprise Solutions",
+          "Digital Transformation",
+          "API Development",
+          "Cloud Infrastructure",
         ]}
       />
 
@@ -177,10 +177,10 @@ export function Home() {
             eyebrow="Selected work"
             title={
               <>
-                Work that earns <span className="serif-accent">attention</span>.
+                Software that transforms <span className="serif-accent">businesses</span>.
               </>
             }
-            intro="A small, deliberately varied selection. Each project is shown as a system, not a single screen."
+            intro="A small, deliberately varied selection. Each project is shown with the technical decisions and business impact, not just the final product."
             action={{ label: "All work", href: "/work" }}
           />
 
@@ -205,10 +205,10 @@ export function Home() {
               <>
                 Four disciplines,
                 <br />
-                one <span className="serif-accent">continuous</span> practice.
+                one <span className="serif-accent">integrated</span> practice.
               </>
             }
-            intro="Strategy, design and engineering are not handoffs here. They are one conversation, held from the first brief to the final deploy."
+            intro="Discovery, design, development and deployment are not silos here. They are one continuous engagement, from requirements to production support."
             action={{ label: "Services", href: "/services" }}
           />
 
@@ -295,10 +295,10 @@ export function Home() {
               eyebrow="Insights"
               title={
                 <>
-                  Notes on <span className="serif-accent">craft</span>.
+                  Insights on <span className="serif-accent">software</span>.
                 </>
               }
-              intro="Occasional writing about the decisions behind the work — design, engineering and everything in between."
+              intro="Technical writing about software development, architecture decisions, and the technology landscape — from our engineering team."
               action={{ label: "All insights", href: "/insights" }}
             />
 

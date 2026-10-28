@@ -41,7 +41,7 @@ export function Terms() {
       <p>
         This website is operated by {site.legalName}, based in{" "}
         {site.austin.locality}, {site.austin.regionName}, {site.austin.country}.
-        It provides information about the studio, its services and its writing,
+        It provides information about the company, its services and its writing,
         and allows prospective clients to get in touch.
       </p>
 

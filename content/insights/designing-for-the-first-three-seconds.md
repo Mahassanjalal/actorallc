@@ -23,7 +23,7 @@ Three seconds is not much time. It is enough to answer three questions.
 
 ## 1. What is this?
 
-Not what does the company do — that comes second. First: what kind of thing am I looking at? A product, a studio, a publication, a place? The answer comes from typography, density, rhythm and the first image far more than from a tagline.
+Not what does the company do — that comes second. First: what kind of thing am I looking at? A product, a company, a publication, a place? The answer comes from typography, density, rhythm and the first image far more than from a tagline.
 
 We design the opening frame so that the answer is visible before it is readable. A clear scale relationship between the headline, the supporting line and the navigation does most of the work. When everything is loud, the answer becomes "noise" — and the visitor leaves before the sentence finishes.
 

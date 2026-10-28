@@ -18,10 +18,10 @@ export interface PageMeta {
 }
 
 const DEFAULT_TITLE =
-  "Actora — Design and technology studio in Austin, Texas";
+  "Actora — Software and technology company in Austin, Texas";
 const DEFAULT_DESCRIPTION = site.description;
 const DEFAULT_IMAGE_ALT =
-  "Actora — an independent design and technology studio in Austin, Texas.";
+  "Actora — a software and technology company in Austin, Texas.";
 
 /** Base path without a trailing slash, e.g. "" or "/actorallc". */
 export function basePath(): string {
@@ -183,7 +183,7 @@ const staticMeta: Record<string, PageMeta> = {
     path: "/",
     title: DEFAULT_TITLE,
     description:
-      "Actora is a design and technology studio in Austin, Texas, building brand systems, digital products and web platforms with intention.",
+      "Actora is a software and technology company in Austin, Texas, building custom software, web applications and enterprise solutions with intention.",
     type: "website",
     jsonLd: [
       organisationNode(),
@@ -203,7 +203,7 @@ const staticMeta: Record<string, PageMeta> = {
     path: "/about",
     title: "About — Actora",
     description:
-      "Actora is an independent design and technology studio in Austin, Texas. How we think, how we work, and what we value.",
+      "Actora is a software and technology company in Austin, Texas. How we think, how we work, and what we value.",
     type: "website",
     jsonLd: [
       breadcrumbNode([
@@ -214,9 +214,9 @@ const staticMeta: Record<string, PageMeta> = {
   },
   "/services": {
     path: "/services",
-    title: "Services — Brand, product, web and motion — Actora",
+    title: "Services — Custom software, web apps, enterprise solutions — Actora",
     description:
-      "Brand systems, digital product design, web platforms and motion from Actora, a design and technology studio in Austin, Texas.",
+      "Custom software development, web applications, enterprise solutions and digital transformation from Actora, a software and technology company in Austin, Texas.",
     type: "website",
     jsonLd: [
       breadcrumbNode([
@@ -239,7 +239,7 @@ const staticMeta: Record<string, PageMeta> = {
     path: "/work",
     title: "Work — Actora",
     description:
-      "Selected work and case studies from Actora, a design and technology studio in Austin, Texas.",
+      "Selected work and case studies from Actora, a software and technology company in Austin, Texas.",
     type: "website",
     jsonLd: [
       breadcrumbNode([
@@ -252,7 +252,7 @@ const staticMeta: Record<string, PageMeta> = {
     path: "/insights",
     title: "Insights — Actora",
     description:
-      "Essays on brand, product, engineering and craft from the Actora studio in Austin, Texas.",
+      "Essays on software development, engineering and technology from Actora, a software and technology company in Austin, Texas.",
     type: "website",
     jsonLd: [
       breadcrumbNode([

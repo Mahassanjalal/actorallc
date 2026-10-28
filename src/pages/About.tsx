@@ -7,14 +7,14 @@ export function About() {
   return (
     <>
       <PageHeader
-        eyebrow="About the studio"
+        eyebrow="About the company"
         title={
           <>
-            A studio for work that has to{" "}
+            A company for software that has to{" "}
             <span className="serif-accent">matter</span>.
           </>
         }
-        intro="Actora is an independent design and technology studio in Austin, Texas. We work with people who care how their ideas are understood — and who are willing to make the decisions that requires."
+        intro="Actora is a software and technology company in Austin, Texas. We work with businesses that need custom software solutions — and who are ready to make the decisions that transforms their operations."
       />
 
       <section className="section border-t border-line">
@@ -29,19 +29,20 @@ export function About() {
               <Reveal delay={40}>
                 <div className="space-y-5 text-[0.95rem] leading-relaxed text-muted">
                   <p className="text-lg leading-relaxed text-bone">
-                    We sit between brand and product: the place where a promise
-                    becomes an interface, a film, a system a team can run.
+                    We build custom software that solves real business problems.
+                    From internal tools to customer-facing applications, we create
+                    solutions that streamline operations and drive growth.
                   </p>
                   <p>
-                    Our work starts with a question that can be argued about. What
-                    is this for? Who is it actually for? What would make it worth
-                    someone's attention? The answers become the brief, and the
-                    brief keeps the work honest.
+                    Our work starts with understanding your business. What workflows
+                    need automation? What data needs better management? What would
+                    make your team more effective? The answers become the requirements,
+                    and the requirements keep the project focused.
                   </p>
                   <p>
-                    From there we design and build in the same room — identity,
-                    interface, motion and production code — so the thing that
-                    ships is the thing we meant.
+                    From there we architect and build — database design, API development,
+                    front-end interfaces, and deployment pipelines — so the software
+                    that ships is the solution you needed.
                   </p>
                 </div>
               </Reveal>
@@ -49,11 +50,11 @@ export function About() {
                 <div className="space-y-6">
                   <figure className="rounded-lg border border-line bg-ink-raised p-7">
                     <blockquote className="serif text-2xl leading-[1.35] text-bone">
-                      “The work should feel inevitable — as though it could not
+                      “Good software should feel inevitable — as though it could not
                       reasonably have been anything else.”
                     </blockquote>
                     <figcaption className="label mt-6 text-faint">
-                      Actora — studio principle
+                      Actora — engineering principle
                     </figcaption>
                   </figure>
                   <dl className="grid grid-cols-2 gap-6">
@@ -64,9 +65,9 @@ export function About() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="label text-faint">Practice</dt>
+                      <dt className="label text-faint">Services</dt>
                       <dd className="mt-2 text-sm text-bone">
-                        Brand, product, web, motion
+                        Custom Software, Web Apps, Enterprise Solutions
                       </dd>
                     </div>
                     <div>
@@ -135,8 +136,8 @@ export function About() {
           <div className="lg:col-span-9">
             <Reveal delay={50}>
               <h2 id="team-heading" className="display-md max-w-[20ch] text-bone">
-                Senior people, <span className="serif-accent">close</span> to the
-                work.
+                Senior engineers, <span className="serif-accent">close</span> to the
+                code.
               </h2>
             </Reveal>
 
@@ -155,7 +156,7 @@ export function About() {
             ) : (
               <div className="mt-10 rounded-lg border border-dashed border-line-strong bg-ink-raised/60 p-7">
                 <p className="text-sm leading-relaxed text-muted">
-                  Team profiles will appear here once the studio supplies names,
+                  Team profiles will appear here once the company supplies names,
                   roles and approved photography. Add them to{" "}
                   <code className="rounded border border-line bg-surface px-1.5 py-0.5 text-[12px] text-bone">
                     src/config/site.ts
@@ -167,8 +168,8 @@ export function About() {
 
             <div className="mt-12 border-t border-line pt-8">
               <p className="lede max-w-2xl">
-                We keep engagements small on purpose. The people in the first
-                conversation are the people doing the work.
+                We keep engagements focused on purpose. The engineers in the first
+                conversation are the engineers doing the work.
               </p>
             </div>
           </div>
@@ -176,8 +177,8 @@ export function About() {
       </section>
 
       <ClosingCTA
-        title="Let's build something that lasts."
-        intro="If you are starting something new, or rebuilding something that should be better, we would like to hear about it."
+        title="Let's build software that works."
+        intro="If you need custom software, a web application, or help modernizing your systems, we would like to hear about it."
       />
     </>
   );
