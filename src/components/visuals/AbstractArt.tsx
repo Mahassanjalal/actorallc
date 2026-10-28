@@ -23,9 +23,9 @@ function mulberry32(seed: number) {
 }
 
 /**
- * Deterministic, dependency-free artwork: layered arcs, hairlines and a
- * single signal point. Art-directed, not stock imagery — and zero network
- * requests or layout shift.
+ * Deterministic, dependency-free artwork: layered geometric patterns with
+ * circles, arcs, grids and signal points. Art-directed for software
+ * portfolios — zero network requests, zero layout shift.
  */
 export function AbstractArt({
   from,
@@ -37,27 +37,51 @@ export function AbstractArt({
 }: AbstractArtProps) {
   const uid = useId().replace(/[:]/g, "");
   const random = mulberry32(seed);
-  const arcs = Array.from({ length: 5 }, (_, index) => {
-    const cx = 190 + random() * 420;
-    const cy = 130 + random() * 340;
-    const radius = 90 + random() * 250;
+
+  // Generate varied geometric elements based on seed
+  const circles = Array.from({ length: 8 }, (_, index) => ({
+    key: `circle-${index}`,
+    cx: 50 + random() * 700,
+    cy: 50 + random() * 500,
+    r: 20 + random() * 120,
+    opacity: 0.08 + random() * 0.25,
+    strokeWidth: 0.5 + random() * 1.5,
+  }));
+
+  const arcs = Array.from({ length: 6 }, (_, index) => {
+    const cx = 100 + random() * 600;
+    const cy = 80 + random() * 440;
+    const radius = 60 + random() * 200;
     return {
-      key: index,
+      key: `arc-${index}`,
       cx,
       cy,
       radius,
-      opacity: 0.16 + random() * 0.5,
-      width: 0.8 + random() * 1.4,
+      opacity: 0.12 + random() * 0.35,
+      width: 0.6 + random() * 1.2,
       start: random() * 360,
-      sweep: 60 + random() * 220,
+      sweep: 45 + random() * 180,
     };
   });
-  const points = Array.from({ length: 7 }, (_, index) => ({
-    key: index,
-    x: 40 + random() * 720,
-    y: 40 + random() * 520,
-    r: 1 + random() * 2.4,
+
+  const points = Array.from({ length: 12 }, (_, index) => ({
+    key: `point-${index}`,
+    x: 30 + random() * 740,
+    y: 30 + random() * 540,
+    r: 0.8 + random() * 2,
+    opacity: 0.15 + random() * 0.35,
   }));
+
+  // Grid lines for tech feel
+  const gridLines = Array.from({ length: 12 }, (_, index) => ({
+    key: `grid-${index}`,
+    y: 50 + index * 45,
+    opacity: 0.04 + random() * 0.06,
+  }));
+
+  // Central glow position varies by seed
+  const glowCx = 350 + random() * 100;
+  const glowCy = 200 + random() * 100;
 
   return (
     <div className={cn("relative overflow-hidden bg-ink", className)}>
@@ -75,20 +99,65 @@ export function AbstractArt({
             <stop offset="100%" stopColor={to} />
           </linearGradient>
           <radialGradient id={`glow-${uid}`} cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor={accent} stopOpacity="0.85" />
+            <stop offset="0%" stopColor={accent} stopOpacity="0.7" />
             <stop offset="100%" stopColor={accent} stopOpacity="0" />
           </radialGradient>
+          <linearGradient id={`line-grad-${uid}`} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor={accent} stopOpacity="0.3" />
+            <stop offset="100%" stopColor={accent} stopOpacity="0" />
+          </linearGradient>
         </defs>
 
+        {/* Background */}
         <rect width="800" height="600" fill={`url(#bg-${uid})`} />
+
+        {/* Central glow */}
         <circle
-          cx={430}
-          cy={240}
-          r={320}
+          cx={glowCx}
+          cy={glowCy}
+          r={280 + random() * 80}
           fill={`url(#glow-${uid})`}
-          opacity="0.22"
+          opacity="0.25"
         />
 
+        {/* Subtle grid */}
+        <g stroke="#f4f1e9" strokeOpacity="0.06" strokeWidth="0.5">
+          {gridLines.map((line) => (
+            <line
+              key={line.key}
+              x1="0"
+              y1={line.y}
+              x2="800"
+              y2={line.y}
+            />
+          ))}
+          {Array.from({ length: 16 }, (_, index) => (
+            <line
+              key={`vg-${index}`}
+              x1={50 + index * 50}
+              y1="0"
+              x2={50 + index * 50}
+              y2="600"
+              opacity={0.04}
+            />
+          ))}
+        </g>
+
+        {/* Circular elements */}
+        {circles.map((circle) => (
+          <circle
+            key={circle.key}
+            cx={circle.cx}
+            cy={circle.cy}
+            r={circle.r}
+            fill="none"
+            stroke={accent}
+            strokeOpacity={circle.opacity}
+            strokeWidth={circle.strokeWidth}
+          />
+        ))}
+
+        {/* Arc elements */}
         {arcs.map((arc) => (
           <path
             key={arc.key}
@@ -101,30 +170,25 @@ export function AbstractArt({
           />
         ))}
 
-        <g stroke="#f4f1e9" strokeOpacity="0.09" strokeWidth="0.75">
-          {Array.from({ length: 7 }, (_, index) => (
-            <line
-              key={`h-${index}`}
-              x1="0"
-              y1={60 + index * 80}
-              x2="800"
-              y2={60 + index * 80}
-            />
-          ))}
-          {Array.from({ length: 9 }, (_, index) => (
-            <line
-              key={`v-${index}`}
-              x1={40 + index * 90}
-              y1="0"
-              x2={40 + index * 90}
-              y2="600"
-            />
-          ))}
-        </g>
+        {/* Outer ring accent */}
+        <circle
+          cx="640"
+          cy="80"
+          r={60 + random() * 30}
+          fill="none"
+          stroke="#f4f1e9"
+          strokeOpacity="0.12"
+          strokeWidth="0.8"
+        />
+        <circle
+          cx="640"
+          cy="80"
+          r={8 + random() * 4}
+          fill={accent}
+          opacity="0.9"
+        />
 
-        <circle cx="612" cy="132" r="52" fill="none" stroke="#f4f1e9" strokeOpacity="0.16" />
-        <circle cx="612" cy="132" r="6" fill={accent} />
-
+        {/* Decorative dots */}
         {points.map((point) => (
           <circle
             key={point.key}
@@ -132,14 +196,26 @@ export function AbstractArt({
             cy={point.y}
             r={point.r}
             fill="#f4f1e9"
-            opacity="0.28"
+            opacity={point.opacity}
           />
         ))}
+
+        {/* Top accent line */}
+        <line
+          x1="0"
+          y1="0"
+          x2="800"
+          y2="0"
+          stroke={accent}
+          strokeOpacity="0.15"
+          strokeWidth="2"
+        />
       </svg>
 
+      {/* Bottom gradient for text readability */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/90 via-transparent to-transparent"
       />
     </div>
   );

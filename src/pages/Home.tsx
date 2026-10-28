@@ -180,7 +180,7 @@ export function Home() {
                 Software that transforms <span className="serif-accent">businesses</span>.
               </>
             }
-            intro="A small, deliberately varied selection. Each project is shown with the technical decisions and business impact, not just the final product."
+            intro="Ten substantial projects across SaaS, AI, enterprise systems, and web applications. Each one built with modern technologies and engineered for real business impact."
             action={{ label: "All work", href: "/work" }}
           />
 

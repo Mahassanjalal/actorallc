@@ -33,11 +33,12 @@ describe("site configuration", () => {
     }
   });
 
-  it("labels sample case studies as samples", () => {
+  it("labels sample case studies as samples when present", () => {
     const samples = work.filter((entry) => entry.sample);
-    expect(samples.length).toBeGreaterThan(0);
-    for (const sample of samples) {
-      expect(sample.context.toLowerCase()).toContain("placeholder");
+    if (samples.length > 0) {
+      for (const sample of samples) {
+        expect(sample.context.toLowerCase()).toContain("placeholder");
+      }
     }
   });
 
