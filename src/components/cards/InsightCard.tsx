@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { Insight } from "@/lib/insights";
 import { formatDate } from "@/lib/format";
 import { AbstractArt } from "@/components/visuals/AbstractArt";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { cn } from "@/lib/cn";
 import { paletteForCategory } from "@/lib/palette";
 
@@ -20,7 +21,7 @@ export function InsightCard({ article, className, featured = false }: InsightCar
         className="flex h-full flex-col focus-visible:outline-none"
         aria-label={`Read ${article.title}`}
       >
-        <div className="relative overflow-hidden rounded-lg border border-line">
+        <SpotlightCard className="relative overflow-hidden rounded-lg border border-line transition-colors duration-300 group-hover:border-line-strong">
           <AbstractArt
             {...paletteForCategory(article.category)}
             className={cn(
@@ -34,7 +35,7 @@ export function InsightCard({ article, className, featured = false }: InsightCar
           <span className="pointer-events-none absolute bottom-4 right-4 flex size-10 items-center justify-center rounded-full border border-bone/20 bg-ink/50 text-bone opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
             <ArrowUpRight className="size-4" aria-hidden="true" strokeWidth={1.6} />
           </span>
-        </div>
+        </SpotlightCard>
 
         <div className="flex flex-1 flex-col pt-5">
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-[0.16em] text-faint">

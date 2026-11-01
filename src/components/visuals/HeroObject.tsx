@@ -56,7 +56,7 @@ export function HeroObject({ className }: { className?: string }) {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-[8%] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,106,61,0.22),rgba(255,106,61,0.04)_45%,transparent_70%)] blur-2xl"
+        className="absolute inset-[8%] rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(234,176,100,0.2),rgba(234,176,100,0.04)_45%,transparent_70%)] blur-2xl"
       />
 
       <motion.div
@@ -75,18 +75,18 @@ export function HeroObject({ className }: { className?: string }) {
         >
           <defs>
             <linearGradient id="blade" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#ff8a63" stopOpacity="0.92" />
-              <stop offset="55%" stopColor="#ff6a3d" stopOpacity="0.34" />
-              <stop offset="100%" stopColor="#ff6a3d" stopOpacity="0.04" />
+              <stop offset="0%" stopColor="#f4c47c" stopOpacity="0.92" />
+              <stop offset="55%" stopColor="#eab064" stopOpacity="0.34" />
+              <stop offset="100%" stopColor="#eab064" stopOpacity="0.04" />
             </linearGradient>
             <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#f4f1e9" stopOpacity="0.55" />
               <stop offset="100%" stopColor="#f4f1e9" stopOpacity="0.06" />
             </linearGradient>
             <radialGradient id="core" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#ffd9c9" />
-              <stop offset="60%" stopColor="#ff6a3d" />
-              <stop offset="100%" stopColor="#ff6a3d" stopOpacity="0" />
+              <stop offset="0%" stopColor="#fdf0d8" />
+              <stop offset="60%" stopColor="#eab064" />
+              <stop offset="100%" stopColor="#eab064" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -148,7 +148,7 @@ export function HeroObject({ className }: { className?: string }) {
                 key={angle}
                 d="M320 320 L320 72 C430 78 512 158 524 272 C444 220 380 300 320 320 Z"
                 fill="url(#blade)"
-                stroke="#ff8a63"
+                stroke="#f4c47c"
                 strokeOpacity="0.18"
                 strokeWidth="1"
                 transform={`rotate(${angle} 320 320)`}
@@ -160,16 +160,16 @@ export function HeroObject({ className }: { className?: string }) {
               r="62"
               fill="var(--color-ink)"
               fillOpacity="0.72"
-              stroke="#ff8a63"
+              stroke="#f4c47c"
               strokeOpacity="0.5"
             />
             <circle cx="320" cy="320" r="78" fill="url(#core)" opacity="0.28" />
-            <circle cx="320" cy="320" r="5" fill="#ffd9c9" />
+            <circle cx="320" cy="320" r="5" fill="#fdf0d8" />
           </g>
 
           {/* signal dot on the outer ring */}
           <g className="animate-orbit" style={{ transformOrigin: "320px 320px", animationDuration: "26s" }}>
-            <circle cx="320" cy="24" r="4" fill="#ff6a3d" />
+            <circle cx="320" cy="24" r="4" fill="#eab064" />
           </g>
 
           <g stroke="#f4f1e9" strokeOpacity="0.2">

@@ -96,12 +96,12 @@ export const site = {
   },
 
   /* ------------------------------------------------------------- contact */
-  // PLACEHOLDER addresses. Replace with live mailboxes before launch.
+  // Live company mailbox. Update here and it applies across the whole site.
   email: {
-    general: "hello@actorallc.example",
-    projects: "projects@actorallc.example",
-    contracts: "contracts@actorallc.example",
-    privacy: "privacy@actorallc.example",
+    general: "support@actora.us",
+    projects: "support@actora.us",
+    contracts: "support@actora.us",
+    privacy: "support@actora.us",
   },
   phone: null as string | null,
   social: [] as SocialLink[],

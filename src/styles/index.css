@@ -10,20 +10,20 @@
   --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, monospace;
 
-  --color-ink: #07070a;
-  --color-ink-raised: #0b0b10;
-  --color-surface: #111117;
-  --color-surface-2: #16161d;
-  --color-bone: #f4f1e9;
-  --color-muted: #a8a39a;
-  --color-faint: #726d65;
-  --color-line: #26262e;
-  --color-line-strong: #3a3a45;
-  --color-ember: #ff6a3d;
-  --color-ember-soft: #ffb59e;
+  --color-ink: #08080c;
+  --color-ink-raised: #0d0d14;
+  --color-surface: #15151d;
+  --color-surface-2: #1c1c26;
+  --color-bone: #f4f2ed;
+  --color-muted: #a5a1a8;
+  --color-faint: #706e78;
+  --color-line: #26262f;
+  --color-line-strong: #3c3c48;
+  --color-ember: #eab064;
+  --color-ember-soft: #f7dcae;
   --color-ice: #a8c3ff;
-  --color-success: #8fe3b0;
-  --color-danger: #ff9b85;
+  --color-success: #9fe0bb;
+  --color-danger: #ffa391;
 
   --radius-xs: 2px;
   --radius-sm: 4px;
@@ -435,9 +435,25 @@
  * ------------------------------------------------------------------------- */
 .aurora {
   background:
-    radial-gradient(58% 54% at 74% 18%, rgba(255, 106, 61, 0.17), transparent 68%),
+    radial-gradient(58% 54% at 74% 18%, rgba(234, 176, 100, 0.15), transparent 68%),
     radial-gradient(46% 46% at 18% 74%, rgba(168, 195, 255, 0.09), transparent 70%),
-    radial-gradient(70% 60% at 50% 110%, rgba(255, 106, 61, 0.05), transparent 70%);
+    radial-gradient(70% 60% at 50% 110%, rgba(234, 176, 100, 0.05), transparent 70%);
+  /* Ambient drift: the layer is oversized (inset-0 + scale) so edges never show. */
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes aurora-drift {
+  from {
+    transform: scale(1.14) translate3d(1.4%, -1%, 0);
+  }
+  to {
+    transform: scale(1.05) translate3d(-1.4%, 1.4%, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none !important;
+  }
 }
 
 .grid-lines {
@@ -459,6 +475,58 @@
   }
 }
 
+/* Sheen sweep for primary buttons. Decorative only; never blocks the label. */
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 32%,
+    rgba(244, 242, 237, 0.32) 50%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+}
+.btn-shine:hover::after {
+  animation: shine-sweep 0.9s var(--ease-out);
+}
+@keyframes shine-sweep {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
+
+/* Pointer-tracking spotlight. Decorative wash on top of the card surface. */
+.card-spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  background: radial-gradient(
+    330px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(234, 176, 100, 0.09),
+    transparent 66%
+  );
+}
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 1;
+}
+
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -469,7 +537,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(96deg, #f4f1e9 8%, #ffb59e 46%, #a8c3ff 96%);
+  background: linear-gradient(96deg, #f4f2ed 8%, #f7dcae 46%, #a8c3ff 96%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

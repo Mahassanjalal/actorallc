@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { site } from "@/config/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Mark } from "@/components/visuals/Mark";
 
 export function Header() {
@@ -148,6 +149,8 @@ export function Header() {
           </button>
         </div>
       </div>
+
+      <ScrollProgress />
 
       <AnimatePresence>
         {open && (

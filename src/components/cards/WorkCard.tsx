@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { WorkSample } from "@/config/site";
 import { AbstractArt } from "@/components/visuals/AbstractArt";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { cn } from "@/lib/cn";
 
 // Inline SVG for GitHub icon
@@ -39,7 +40,7 @@ export function WorkCard({ project, className }: WorkCardProps) {
         className="block focus-visible:outline-none"
         aria-label={`${project.title} — ${project.discipline} case study`}
       >
-        <div className="rounded-lg border border-line overflow-hidden bg-ink-raised transition-all duration-300 group-hover:border-line-strong group-hover:shadow-lg">
+        <SpotlightCard className="overflow-hidden rounded-lg border border-line bg-ink-raised transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border-line-strong group-hover:shadow-[0_32px_70px_-38px_rgba(234,176,100,0.28)]">
           {/* Hero artwork */}
           <div className="relative h-48 overflow-hidden">
             <AbstractArt
@@ -116,7 +117,7 @@ export function WorkCard({ project, className }: WorkCardProps) {
               )}
             </div>
           </div>
-        </div>
+        </SpotlightCard>
       </Link>
     </article>
   );
