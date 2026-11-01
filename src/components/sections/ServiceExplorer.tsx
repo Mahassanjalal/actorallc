@@ -14,9 +14,9 @@ export function ServiceExplorer() {
         <details
           key={service.slug}
           open={index === 0}
-          className="group border-b border-line"
+          className="group border-b border-line transition-colors duration-300 hover:bg-white/[0.02]"
         >
-          <summary className="flex cursor-pointer list-none items-center gap-5 py-6 md:gap-8 md:py-8 [&::-webkit-details-marker]:hidden">
+          <summary className="flex cursor-pointer list-none items-center gap-5 px-4 py-6 transition-colors duration-300 md:gap-8 md:px-6 md:py-8 [&::-webkit-details-marker]:hidden">
             <span className="font-mono text-[11px] tracking-[0.16em] text-faint">
               {service.index}
             </span>
@@ -34,7 +34,7 @@ export function ServiceExplorer() {
             </span>
           </summary>
 
-          <div className="grid gap-8 pb-9 pl-9 md:grid-cols-12 md:gap-10 md:pl-16 md:pb-12">
+          <div className="grid gap-8 pb-9 pl-[3.25rem] md:grid-cols-12 md:gap-10 md:pl-[5.5rem] md:pb-12">
             <div className="md:col-span-6">
               {service.description.map((paragraph) => (
                 <p

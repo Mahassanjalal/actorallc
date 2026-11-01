@@ -234,9 +234,10 @@ or business history. To finalize:
 
 1. **Brand copy** — tagline, positioning, hero support and about narrative in
    `src/config/site.ts` (currently marked as placeholder).
-2. **Contact details** — `hello@`, `projects@`, `contracts@`, `privacy@`
-   currently use the reserved `.example` domain. Add a real phone only if
-   published.
+2. **Contact details** — all contact mailboxes now route to
+   `support@actora.us` from `site.email` in `src/config/site.ts`. Split into
+   dedicated mailboxes (`projects@`, `privacy@`, …) when available. Add a real
+   phone only if published.
 3. **Services and process** — confirm the four placeholder services and the
    four-phase development process match what the company actually offers.
 4. **Case studies** — replace the three `sample: true` projects with approved
